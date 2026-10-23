@@ -5,8 +5,8 @@ window.STUDIO = {
   whatsapp: "918777587542",
   phoneDisplay: "+91 87775 87542",
   instagram: "https://www.instagram.com/jinnysnailstudio",
-  areaLabel: "Near Mirania Gardens 2, Dhapa (EM Bypass), Kolkata 700105", // PLACEHOLDER: exact address to be confirmed
-  mapQuery: "Mirania Gardens 2, Dhapa, Kolkata 700105",
+  areaLabel: "GCP7+XR7 Sudip Bhandar, Unnamed Road, Durgapur, Dhapa, Kolkata, West Bengal 700107",
+  mapQuery: "GCP7+XR7 Dhapa, Kolkata",
   hours: "Open daily · Prior notice given if closed",
   services: [
     { name: "Both Hands Extension", price: 699, duration: "Duration: ~3 hours", desc: "Full set of gel/acrylic extensions on both hands, shaped & finished to your style." },
