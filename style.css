@@ -41,7 +41,7 @@ h1 .big{display:block;font-family:Manrope;font-weight:300;font-size:clamp(.95rem
 .services{background:linear-gradient(180deg,transparent,rgba(59,22,49,.45),transparent)}
 .grid-s{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
 .card{position:relative;padding:34px 26px 28px;border-radius:var(--r);background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.015));border:1px solid rgba(243,223,174,.18);backdrop-filter:blur(12px);transform-style:preserve-3d;transition:border-color .4s,box-shadow .4s;overflow:hidden;display:flex;flex-direction:column}
-.card:before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(243,223,174,.14),transparent 40%);opacity:0;transition:.4s}.card:hover:before{opacity:1}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(243,223,174,.14),transparent 40%);opacity:0;transition:.4s;pointer-events:none}.card:hover:before{opacity:1}
 .card:hover{border-color:rgba(243,223,174,.45);box-shadow:0 30px 60px -25px rgba(231,155,176,.35)}
 .badge{align-self:flex-start;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.45em .9em;border-radius:999px;background:linear-gradient(90deg,var(--rose),var(--gold));color:#2a1022;margin-bottom:20px}
 .card h3{font-size:1.7rem;margin-bottom:.4em}.card p{color:var(--mut);font-size:.92rem;flex:1}
