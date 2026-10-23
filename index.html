@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jinny's Nail Studio · Luxury Nail Extensions & Nail Art · Kolkata</title>
+<meta name="description" content="Jinny's Nail Studio – luxury nail extensions, toe extensions and custom nail art near Mirania Gardens 2, Kolkata. Book on WhatsApp.">
+<meta property="og:title" content="Jinny's Nail Studio"><meta property="og:image" content="media/logo.webp"><meta name="theme-color" content="#140910">
+<link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Great+Vibes&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><script src="config.js"></script></head><body>
+<div class="grain"></div><div id="cursor"></div>
+<header class="nav"><a href="#top" class="brand"><img src="media/logo.webp" alt="Jinny's Nail Studio logo" width="44" height="44"><span>Jinny's <em>Nail Studio</em></span></a>
+<nav id="menu"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#reels">Reels</a><a href="#location">Visit</a><a href="#book" class="btn sm">Book Now</a></nav>
+<button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('open')"><i></i><i></i></button></header>
+
+<section class="hero" id="top"><canvas id="gl"></canvas><div class="hero-glow"></div>
+<div class="hero-in"><p class="eyebrow r">Luxury Nail Studio · Kolkata</p>
+<h1 class="r"><span class="script">Jinny's</span><span class="big">Nail Studio</span></h1>
+<p class="lead r">Sculpted extensions & hand‑painted nail art, crafted with obsessive detail — so your hands do the talking.</p>
+<div class="cta r"><a href="#book" class="btn">Book Appointment</a><a href="#gallery" class="btn ghost">View the Work</a></div>
+<div class="offer-pill r"><span class="dot"></span><b data-offer></b> on all extensions</div></div>
+<div class="scroll-ind"><span></span>Scroll</div></section>
+
+<div class="marquee"><div class="track">Extensions ✦ Nail Art ✦ Toe Extensions ✦ Chrome ✦ French ✦ Ombré ✦ Custom Designs ✦ Extensions ✦ Nail Art ✦ Toe Extensions ✦ Chrome ✦ French ✦ Ombré ✦ Custom Designs ✦&nbsp;</div></div>
+
+<section class="about wrap" id="about"><div class="about-media"><div class="tilt frame p1"><img loading="lazy" src="media/n05.webp" alt="Nail art by Jinny"></div><div class="tilt frame p2"><img loading="lazy" src="media/n12.webp" alt="Nail extensions"></div></div>
+<div class="about-txt"><p class="eyebrow r">Meet the Artist</p><h2 class="r">Every set is a <i>little masterpiece</i>.</h2>
+<p class="r">Jinny's Nail Studio is the creative home of Jinny — a nail artist who believes your nails should feel as good as they look. From clean, everyday elegance to bold statement art, each set is shaped, built and finished by hand, one nail at a time.</p>
+<p class="r">Bring a reference, a mood, or just your favourite colour — we'll design something that's unmistakably yours.</p>
+<a class="link r" data-ig target="_blank" rel="noopener">@jinnysnailstudio →</a></div></section>
+
+<section class="services" id="services"><div class="wrap"><p class="eyebrow r c">Services & Pricing</p><h2 class="r c">Festive prices, <i>timeless</i> nails.</h2>
+<div class="grid-s" id="svc"></div></div></section>
+
+<section class="gallery wrap" id="gallery"><p class="eyebrow r c">The Gallery</p><h2 class="r c">Fresh from the <i>studio</i>.</h2><div class="masonry" id="gal"></div></section>
+
+<section class="reels" id="reels"><div class="wrap"><p class="eyebrow r">In Motion</p><h2 class="r">The <i>reel</i> strip.</h2><p class="muted r">Tap any reel to play full screen.</p></div><div class="strip" id="strip"></div></section>
+
+<section class="why wrap"><p class="eyebrow r c">Why Jinny's</p><h2 class="r c">The little things, <i>done right</i>.</h2>
+<div class="grid-w">
+<div class="w tilt r"><span>01</span><h3>Hand‑crafted art</h3><p>Every design is painted and built by hand — no stickers-and-done shortcuts.</p></div>
+<div class="w tilt r"><span>02</span><h3>Hygiene first</h3><p>Clean tools and a tidy, comfortable space for every appointment.</p></div>
+<div class="w tilt r"><span>03</span><h3>Made for you</h3><p>Shape, length and colour chosen together so the set suits your hands and lifestyle.</p></div>
+<div class="w tilt r"><span>04</span><h3>Honest pricing</h3><p>Clear prices up front; custom art quoted before we begin.</p></div></div></section>
+
+<section class="book" id="book"><div class="wrap book-in"><div class="book-txt"><p class="eyebrow r">Reserve Your Chair</p><h2 class="r">Book your <i>appointment</i>.</h2>
+<p class="r">Fill in the details and we'll open WhatsApp with your booking message ready to send. Jinny will confirm your slot personally.</p>
+<ul class="info r"><li><b>Hours</b><span data-hours></span></li><li><b>Call</b><a data-tel></a></li><li><b>Area</b><span data-area></span></li></ul></div>
+<form id="bf" class="glass r" autocomplete="on">
+<label>Your name<input name="name" required placeholder="e.g. Priya"></label>
+<label>Phone<input name="phone" type="tel" required pattern="[0-9+ \-]{10,15}" placeholder="10-digit mobile"></label>
+<label>Service<select name="service" id="svcsel" required></select></label>
+<div class="two"><label>Date<input name="date" type="date" required id="dt"></label><label>Time slot<select name="slot" id="slots" required></select></label></div>
+<label>Notes / design idea<textarea name="notes" rows="3" placeholder="Shape, length, colours, reference…"></textarea></label>
+<button class="btn full" type="submit">Send booking on WhatsApp</button><p class="fine">No payment needed now · Opens WhatsApp</p></form></div></section>
+
+<section class="ig wrap r"><div class="ig-card"><div><p class="eyebrow">Follow the Glow</p><h2>See new sets daily on <i>Instagram</i>.</h2></div><a class="btn" data-ig target="_blank" rel="noopener">Follow @jinnysnailstudio</a></div></section>
+
+<section class="loc wrap" id="location"><div class="loc-txt"><p class="eyebrow r">Visit Us</p><h2 class="r">Find the <i>studio</i>.</h2><p class="r" data-area></p><p class="muted r">Exact location shared on WhatsApp after booking.</p><a class="btn ghost r" id="maplink" target="_blank" rel="noopener">Open in Google Maps</a></div>
+<div class="map r"><iframe id="mapf" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></section>
+
+<footer><img src="media/logo.webp" alt="" width="70" height="70" loading="lazy"><p class="script">Jinny's Nail Studio</p><p class="muted"><a data-ig target="_blank" rel="noopener">Instagram</a> · <a data-tel></a> · <a data-wa target="_blank" rel="noopener">WhatsApp</a></p>
+<p class="muted sm">© <span id="yr"></span> Jinny's Nail Studio · Website by <a href="https://debnathsanu171-commits.github.io/jd-studio/" target="_blank" rel="noopener">JD Studio</a></p></footer>
+
+<div class="fab"><a data-tel class="f call" aria-label="Call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+<a data-wa class="f wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.5z"/></svg></a></div>
+
+<div id="lb" class="lb" onclick="if(event.target===this||event.target.classList.contains('x'))this.classList.remove('on')"><button class="x" aria-label="Close">×</button><button class="nv pv" aria-label="Previous">‹</button><div class="lbc"></div><button class="nv nx" aria-label="Next">›</button></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script src="main.js" defer></script><script type="module" src="hero3d.js"></script></body></html>
