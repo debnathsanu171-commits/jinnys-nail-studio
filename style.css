@@ -113,3 +113,5 @@ nav .mx{display:none}
 @media(max-width:1024px) and (min-width:721px){.burger{display:flex;z-index:2}nav{position:fixed;inset:0;background:rgba(18,8,16,.97);flex-direction:column;justify-content:center;font-size:1.4rem;gap:26px;opacity:0;pointer-events:none;transition:.4s}
 .open nav{opacity:1;pointer-events:auto}.open .burger i:first-child{transform:translateY(4px) rotate(45deg)}.open .burger i:last-child{transform:translateY(-4px) rotate(-45deg)}}
 @media(max-width:1024px){nav .mx{display:inline-flex}nav{gap:clamp(10px,2.2dvh,22px);max-height:100dvh;overflow-y:auto;overscroll-behavior:contain;padding:72px 0 28px;justify-content:safe center;font-size:clamp(1.1rem,2.9dvh,1.4rem)}}
+.hero .r{animation:heroIn 1.2s cubic-bezier(.215,.61,.355,1) forwards}.hero .r:nth-child(2){animation-delay:.12s}.hero .r:nth-child(3){animation-delay:.24s}.hero .r:nth-child(4){animation-delay:.36s}.hero .r:nth-child(5){animation-delay:.48s}
+@keyframes heroIn{from{opacity:.01;transform:translateY(40px)}to{opacity:1;transform:none}}

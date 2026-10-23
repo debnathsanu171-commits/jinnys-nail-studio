@@ -71,7 +71,7 @@ const go=()=>{if(!window.gsap||red){document.body.classList.add('reduced');retur
 if(window.Lenis){const lenis=new Lenis({duration:1.15,smoothWheel:true,syncTouch:false});window.lenis=lenis;lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
 $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=a.getAttribute('href');if(t.length>1&&$(t)){e.preventDefault();setTimeout(()=>lenis.scrollTo(t,{offset:-60}),0)}}));
 const lbo=new MutationObserver(()=>$('#lb').classList.contains('on')?lenis.stop():lenis.start());lbo.observe($('#lb'),{attributes:true})}
-gsap.to('.hero .r',{opacity:1,y:0,duration:1.2,stagger:.12,ease:'power3.out',delay:.2});
+
 $$('.r').filter(e=>!e.closest('.hero')).forEach(e=>gsap.to(e,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:e,start:'top 90%'}}));
 gsap.to('.p1',{yPercent:-12,ease:'none',scrollTrigger:{trigger:'.about',scrub:true}});gsap.fromTo('.p2',{yPercent:15},{yPercent:-15,ease:'none',scrollTrigger:{trigger:'.about',scrub:true}});
 gsap.to('.hero-in',{yPercent:30,opacity:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
