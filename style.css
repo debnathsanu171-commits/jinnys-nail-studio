@@ -102,3 +102,4 @@ img,video,iframe{max-width:100%}
 @media(max-width:720px){section{padding-inline:0}.wrap{width:min(1180px,90vw)}h2{font-size:clamp(2rem,9vw,2.6rem)}.fab{right:12px;bottom:12px}.f{width:50px;height:50px}footer{padding-bottom:140px}.about-media{height:clamp(360px,110vw,480px)}.cf{height:clamp(340px,95vw,440px)}.cfc{width:min(62vw,300px);margin:calc(min(62vw,300px)*-2/3) 0 0 calc(min(62vw,300px)/-2)}.ig-card{padding:28px 22px}.ig-card .btn{width:100%}.lead{padding:0 4px}}
 @media(max-width:380px){h1 .big{letter-spacing:.5em}.cta .btn{width:100%}}
 .cfc:before{content:'';position:absolute;inset:0;background:#000;opacity:var(--dim,0);z-index:1;pointer-events:none}
+.lq{background-size:cover;background-position:center;opacity:1}.lq:not(.ok){filter:blur(8px)}.lq.ok{transition:filter .5s}.gi img{height:auto}

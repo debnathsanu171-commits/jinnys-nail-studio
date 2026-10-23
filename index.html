@@ -5,9 +5,13 @@
 <link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Great+Vibes&family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"><script src="config.js"></script></head><body>
+<link rel="preload" as="image" href="media/logo.webp" fetchpriority="high">
+<link rel="preload" as="image" href="media/n01-m.webp" imagesrcset="media/n01-s.webp 480w, media/n01-m.webp 800w" imagesizes="(max-width:720px) 62vw, 360px" fetchpriority="high">
+<link rel="preload" as="image" href="media/n02-m.webp" imagesrcset="media/n02-s.webp 480w, media/n02-m.webp 800w" imagesizes="(max-width:720px) 62vw, 360px">
+<link rel="preload" as="image" href="media/n23-m.webp" imagesrcset="media/n23-s.webp 480w, media/n23-m.webp 800w" imagesizes="(max-width:720px) 62vw, 360px">
+<link rel="stylesheet" href="style.css"><script src="config.js"></script><script src="images.js"></script></head><body>
 <div class="grain"></div><div id="cursor"></div>
-<header class="nav"><a href="#top" class="brand"><img src="media/logo.webp" alt="Jinny's Nail Studio logo" width="44" height="44"><span>Jinny's <em>Nail Studio</em></span></a>
+<header class="nav"><a href="#top" class="brand"><img src="media/logo.webp" alt="Jinny's Nail Studio logo" width="44" height="44" fetchpriority="high" decoding="async"><span>Jinny's <em>Nail Studio</em></span></a>
 <nav id="menu"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#reels">Reels</a><a href="#location">Visit</a><a href="#book" class="btn sm">Book Now</a></nav>
 <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('open')"><i></i><i></i></button></header>
 
@@ -21,7 +25,7 @@
 
 <div class="marquee"><div class="track">Extensions ✦ Nail Art ✦ Toe Extensions ✦ Chrome ✦ French ✦ Ombré ✦ Custom Designs ✦ Extensions ✦ Nail Art ✦ Toe Extensions ✦ Chrome ✦ French ✦ Ombré ✦ Custom Designs ✦&nbsp;</div></div>
 
-<section class="about wrap" id="about"><div class="about-media"><div class="tilt frame p1"><img loading="lazy" src="media/n05.webp" alt="Nail art by Jinny"></div><div class="tilt frame p2"><img loading="lazy" src="media/n12.webp" alt="Nail extensions"></div></div>
+<section class="about wrap" id="about"><div class="about-media"><div class="tilt frame p1"><img loading="lazy" decoding="async" width="963" height="1280" src="media/n05-m.webp" srcset="media/n05-m.webp 800w, media/n05.webp 1100w" sizes="(max-width:960px) 60vw, 30vw" alt="Nail art by Jinny"></div><div class="tilt frame p2"><img loading="lazy" decoding="async" width="924" height="1280" src="media/n12-m.webp" srcset="media/n12-m.webp 800w, media/n12.webp 1100w" sizes="(max-width:960px) 50vw, 25vw" alt="Nail extensions"></div></div>
 <div class="about-txt"><p class="eyebrow r">Meet the Artist</p><h2 class="r">Every set is a <i>little masterpiece</i>.</h2>
 <p class="r">Jinny's Nail Studio is the creative home of Jinny — a nail artist who believes your nails should feel as good as they look. From clean, everyday elegance to bold statement art, each set is shaped, built and finished by hand, one nail at a time.</p>
 <p class="r">Bring a reference, a mood, or just your favourite colour — we'll design something that's unmistakably yours.</p>

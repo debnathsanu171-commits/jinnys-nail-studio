@@ -19,9 +19,10 @@ const dt=g('date')?new Date(g('date')+'T00:00').toLocaleDateString('en-IN',{week
 const m=`✨ *New Booking Request – Jinny's Nail Studio* ✨\n\n👤 *Name:* ${g('name')}\n📞 *Phone:* ${g('phone')}\n💅 *Service:* ${g('service')}\n📅 *Date:* ${dt}\n⏰ *Time slot:* ${g('slot')}\n📝 *Notes:* ${g('notes')||'-'}\n\n🎉 ${S.offerLabel}`;
 window.open(wa+'?text='+encodeURIComponent(m),'_blank')});
 // gallery
+const IM=window.IMGS||[];const pic=(n,i,sz,eager)=>{const d=IM[i]||{w:900,h:1200,q:''};return `<img class="lq" ${eager?'loading="eager" fetchpriority="high"':'loading="lazy"'} decoding="async" draggable="false" width="${d.w}" height="${d.h}" style="background-image:url(${d.q})" src="media/n${n}-m.webp" srcset="media/n${n}-s.webp 480w, media/n${n}-m.webp 800w, media/n${n}.webp 1100w" sizes="${sz}" alt="Nail design ${i+1} by Jinny's Nail Studio" onload="this.classList.add('ok')">`};
 const G=Array.from({length:23},(_,i)=>String(i+1).padStart(2,'0'));
-$('#cf').innerHTML=G.map((n,i)=>`<div class="cfc" data-i="${i}"><img loading="lazy" decoding="async" draggable="false" src="media/n${n}-s.webp" alt="Nail design ${i+1}"></div>`).join('');
-$('#gal').innerHTML=G.map((n,i)=>`<div class="gi r" data-i="${i}"><img loading="lazy" decoding="async" src="media/n${n}-s.webp" alt="Nail design ${i+1} by Jinny's Nail Studio"></div>`).join('');
+$('#cf').innerHTML=G.map((n,i)=>`<div class="cfc" data-i="${i}">${pic(n,i,'(max-width:720px) 62vw, 360px',i<3||i>G.length-3)}</div>`).join('');
+$('#gal').innerHTML=G.map((n,i)=>`<div class="gi r" data-i="${i}">${pic(n,i,'(max-width:720px) 45vw, 25vw',false)}</div>`).join('');
 const V=Array.from({length:10},(_,i)=>String(i+1).padStart(2,'0'));
 $('#strip').innerHTML=V.map((n,i)=>`<div class="reel" data-v="${i}"><video muted loop playsinline preload="none" poster="media/v${n}.jpg" data-src="media/v${n}.mp4"></video></div>`).join('');
 const io=new IntersectionObserver(es=>es.forEach(x=>{const v=x.target;if(x.isIntersecting){if(!v.src)v.src=v.dataset.src;v.play().catch(()=>{})}else v.pause()}),{rootMargin:'100px',threshold:.15});
@@ -42,9 +43,11 @@ $('#cfp').onclick=()=>go(Math.round(tgt)-1);$('#cfx').onclick=()=>go(Math.round(
 el.addEventListener('wheel',e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){e.preventDefault();tgt+=e.deltaX/300;requestAnimationFrame(tick);clearTimeout(el._w);el._w=setTimeout(()=>go(Math.round(tgt)),120)}},{passive:false});
 let auto=setInterval(()=>go(Math.round(tgt)+1),4000);el.addEventListener('pointerenter',()=>clearInterval(auto));el.addEventListener('pointerdown',()=>clearInterval(auto));go(0)})();
 function cur2(i){cur=i;show()}
+// warm remaining images when idle
+addEventListener('load',()=>(window.requestIdleCallback||setTimeout)(()=>{G.forEach(n=>{const i=new Image();i.decoding='async';i.src=`media/n${n}-${innerWidth<720?'s':'m'}.webp`});if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{})},{timeout:2500}));
 // lightbox
 
-show=()=>{lc.innerHTML=mode=='i'?`<img src="media/n${G[cur]}.webp" alt="">`:`<video src="media/v${V[cur]}.mp4" autoplay loop playsinline controls muted></video>`;lb.classList.add('on')};
+show=()=>{lc.innerHTML=mode=='i'?`<img src="media/n${G[cur]}.webp" alt="" decoding="async">`:`<video src="media/v${V[cur]}.mp4" autoplay loop playsinline controls muted></video>`;lb.classList.add('on')};
 $('#gal').addEventListener('click',e=>{const g=e.target.closest('.gi');if(g){mode='i';cur=+g.dataset.i;show()}});
 $('#strip').addEventListener('click',e=>{const g=e.target.closest('.reel');if(g){mode='v';cur=+g.dataset.v;show()}});
 const step=k=>{const L=mode=='i'?G.length:V.length;cur=(cur+k+L)%L;show()};
