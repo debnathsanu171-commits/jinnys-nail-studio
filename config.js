@@ -7,11 +7,12 @@ window.STUDIO = {
   instagram: "https://www.instagram.com/jinnysnailstudio",
   areaLabel: "Near Mirania Gardens 2, Dhapa (EM Bypass), Kolkata 700105", // PLACEHOLDER: exact address to be confirmed
   mapQuery: "Mirania Gardens 2, Dhapa, Kolkata 700105",
-  hours: "By appointment",                   // PLACEHOLDER: opening hours not yet provided
+  hours: "Open daily · Prior notice given if closed",
   services: [
     { name: "Both Hands Extension", price: 699, duration: "Duration: ~3 hours", desc: "Full set of gel/acrylic extensions on both hands, shaped & finished to your style." },
     { name: "Single Hand Extension", price: 349, duration: "Duration: ~1 hr 30 min", desc: "Perfect for a quick refresh or a statement hand." },
-    { name: "Toe Extension", price: 899, duration: "Duration: ~3 hours", desc: "Polished, long-lasting toe extensions for a complete look." }
+    { name: "Toe Extension", price: 899, duration: "Duration: ~3 hours", desc: "Polished, long-lasting toe extensions for a complete look." },
+    { name: "Toe + Both Hands Combo", price: null, duration: "Duration: ~5 hours", desc: "The full glow-up: toe extensions plus a complete set on both hands in one sitting." }
   ],
-  timeSlots: ["Morning", "Afternoon", "Evening"] // PLACEHOLDER until hours are confirmed
+  timeSlots: ["Morning", "Afternoon", "Evening"] // general slots; exact time confirmed on WhatsApp
 };
