@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="style.css"><script src="config.js"></script><script src="images.js"></script></head><body>
 <div class="grain"></div><div id="cursor"></div>
 <header class="nav"><a href="#top" class="brand"><img src="media/logo.webp" alt="Jinny's Nail Studio logo" width="44" height="44" fetchpriority="high" decoding="async"><span>Jinny's <em>Nail Studio</em></span></a>
-<nav id="menu"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#reels">Reels</a><a href="#location">Visit</a><a href="#book" class="btn sm">Book Now</a></nav>
-<button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('open')"><i></i><i></i></button></header>
+<nav id="menu" aria-label="Main"><a href="#top" class="mx">Home</a><a href="#about" class="mx">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#reels">Reels</a><a href="#why" class="mx">Why Us</a><a href="#book" class="mx">Booking</a><a href="#location">Visit</a><a data-ig target="_blank" rel="noopener" class="mx">Instagram</a><a href="#book" class="btn sm">Book Now</a><a data-wa target="_blank" rel="noopener" class="btn ghost sm mx">WhatsApp</a></nav>
+<button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i></button></header>
 
 <section class="hero" id="top"><canvas id="gl"></canvas><div class="hero-glow"></div>
 <div class="hero-in"><p class="eyebrow r">Luxury Nail Studio · Kolkata</p>
@@ -40,7 +40,7 @@
 
 <section class="reels" id="reels"><div class="wrap"><p class="eyebrow r">In Motion</p><h2 class="r">The <i>reel</i> strip.</h2><p class="muted r">Tap any reel to play full screen.</p></div><div class="strip" id="strip"></div></section>
 
-<section class="why wrap"><p class="eyebrow r c">Why Jinny's</p><h2 class="r c">The little things, <i>done right</i>.</h2>
+<section class="why wrap" id="why"><p class="eyebrow r c">Why Jinny's</p><h2 class="r c">The little things, <i>done right</i>.</h2>
 <div class="grid-w">
 <div class="w tilt r"><span>01</span><h3>Hand‑crafted art</h3><p>Every design is painted and built by hand — no stickers-and-done shortcuts.</p></div>
 <div class="w tilt r"><span>02</span><h3>Hygiene first</h3><p>Clean tools and a tidy, comfortable space for every appointment.</p></div>
@@ -58,7 +58,7 @@
 <label>Notes / design idea<textarea name="notes" rows="3" placeholder="Shape, length, colours, reference…"></textarea></label>
 <button class="btn full" type="submit">Send booking on WhatsApp</button><p class="fine">No payment needed now · Opens WhatsApp</p></form></div></section>
 
-<section class="ig wrap r"><div class="ig-card"><div><p class="eyebrow">Follow the Glow</p><h2>See new sets daily on <i>Instagram</i>.</h2></div><a class="btn" data-ig target="_blank" rel="noopener">Follow @jinnysnailstudio</a></div></section>
+<section class="ig wrap r" id="instagram"><div class="ig-card"><div><p class="eyebrow">Follow the Glow</p><h2>See new sets daily on <i>Instagram</i>.</h2></div><a class="btn" data-ig target="_blank" rel="noopener">Follow @jinnysnailstudio</a></div></section>
 
 <section class="loc wrap" id="location"><div class="loc-txt"><p class="eyebrow r">Visit Us</p><h2 class="r">Find the <i>studio</i>.</h2><p class="r" data-area></p><a class="btn ghost r" id="maplink" target="_blank" rel="noopener">Open in Google Maps</a></div>
 <div class="map r"><iframe id="mapf" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></section>
@@ -73,6 +73,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
 <script src="main.js" defer></script><script type="module" src="hero3d.js"></script></body></html>
