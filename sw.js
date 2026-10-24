@@ -1,3 +1,3 @@
-const C='jns-v1';self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(clients.claim()));
-self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||!/\/media\/.*\.(webp|jpg|png)$/.test(u.pathname))return;
+const C='jns-v3';self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n!==C).map(n=>caches.delete(n)))).then(()=>clients.claim())));
+self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||!/\/(media|fonts)\/.*\.(webp|avif|jpg|png|woff2)$/.test(u.pathname))return;
 e.respondWith(caches.open(C).then(c=>c.match(e.request).then(r=>r||fetch(e.request).then(n=>{if(n.ok)c.put(e.request,n.clone());return n}))))});

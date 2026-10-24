@@ -1,7 +1,7 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js';
 // Shared scene: runs in a Worker (OffscreenCanvas) or on the main thread.
 export function createScene(canvas,{w,h,dpr,mob,reduced}){
-const R=new THREE.WebGLRenderer({canvas,antialias:!mob,alpha:true,powerPreference:'high-performance'});
+const R=new THREE.WebGLRenderer({canvas,antialias:!mob&&dpr<1.5,alpha:true,powerPreference:'high-performance'});
 R.toneMapping=THREE.ACESFilmicToneMapping;R.outputColorSpace=THREE.SRGBColorSpace;R.shadowMap.enabled=false;
 const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,w/h,.1,100);cam.position.z=12;
 const pm=new THREE.PMREMGenerator(R),es=new THREE.Scene();
@@ -10,7 +10,7 @@ sc.environment=pm.fromScene(es,.04).texture;pm.dispose();
 // mobile: MeshStandard (cheaper shader) tuned to look the same glossy
 const glossy=c=>mob?new THREE.MeshStandardMaterial({color:c,metalness:.15,roughness:.08,envMapIntensity:1.3}):new THREE.MeshPhysicalMaterial({color:c,metalness:.15,roughness:.12,clearcoat:1,clearcoatRoughness:.05,sheen:1,sheenColor:new THREE.Color(0xffe0ea)});
 const gold=new THREE.MeshStandardMaterial({color:0xd9b779,metalness:1,roughness:.22});
-const glass=mob?new THREE.MeshStandardMaterial({color:0xffffff,transparent:true,opacity:.28,roughness:.05,metalness:.1}):new THREE.MeshPhysicalMaterial({color:0xffffff,transmission:1,thickness:1.2,roughness:.05,ior:1.5,clearcoat:1});
+const glass=mob?new THREE.MeshStandardMaterial({color:0xffffff,transparent:true,opacity:.28,roughness:.05,metalness:.1}):new THREE.MeshPhysicalMaterial({color:0xffffff,transparent:true,opacity:.3,roughness:.04,metalness:.1,clearcoat:1,clearcoatRoughness:.03,envMapIntensity:1.6,depthWrite:false});
 const S=mob?20:32,items=[];
 function bottle(col){const g=new THREE.Group();
 const body=new THREE.Mesh(new THREE.CapsuleGeometry(.62,.7,6,S),glass);body.scale.set(1,1,.8);g.add(body);
@@ -43,3 +43,10 @@ function frame(dt,cost){ // dt in seconds (refresh independent); cost = last ren
   pd.forEach((d,i)=>{dummy.position.set(d.p.x,d.p.y+Math.sin(T*.8+d.s)*.25,d.p.z);dummy.rotation.set(0,0,0);dummy.scale.setScalar(d.k);dummy.updateMatrix();pearls.setMatrixAt(i,dummy.matrix)});pearls.instanceMatrix.needsUpdate=true;
   const k=1-Math.pow(.96,dt*60);cam.position.x+=(mx*1.6-cam.position.x)*k;cam.position.y+=(-my*1.2-cam.position.y)*k;cam.position.z=12+Math.min(sy/vh,1)*3;cam.lookAt(0,0,0);R.render(sc,cam)}
 return {frame,resize,input(o){if('mx'in o){mx=o.mx;my=o.my}if('sy'in o){sy=o.sy;vh=o.vh}}}}
+
+// frame loop shared by worker and main-thread fallback; optional fps cap (30 on mobile / low-end)
+export function makeLoop(S,fps){let run=false,last=0,acc=0,cost,id=0;const step=fps?1/fps:0;
+  const loop=t=>{if(!run)return;id=requestAnimationFrame(loop);const dt=last?(t-last)/1000:1/60;last=t;
+    if(step){acc+=dt;if(acc<step*.92)return;const d=acc;acc=0;const a=performance.now();S.frame(Math.min(d,.1),cost);cost=performance.now()-a;return}
+    const a=performance.now();S.frame(dt,cost);cost=performance.now()-a};
+  return {run(on){if(on&&!run){run=true;last=0;acc=1;id=requestAnimationFrame(loop)}else if(!on&&run){run=false;cancelAnimationFrame(id)}}}}
